@@ -6,7 +6,7 @@ import Footer from './footer';
 const Layout = ({ children }) => (
   <>
     <Header />
-    <div className="xl:min-h-75vh h-full">
+    <div className="laptop-m:min-h-75vh h-full">
       {children}
     </div>
     <Footer />
