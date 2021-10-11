@@ -25,7 +25,7 @@ const CarouselSection = () => (
                     <div className="text-xl text-left">iPhone 12 Pro Max</div>
                   </div>
                   <div className="h-full tablet:pt-3.5 flex flex-col items-center justify-end tablet:items-start tablet:justify-start">
-                    <div className="w-64 border border-white bg-transparent py-3 font-bold rounded-lg flex justify-center items-center">
+                    <div aria-hidden role="button" onClick={() => console.log('terklik')} className="w-64 border border-white bg-transparent py-3 font-bold rounded-lg flex justify-center items-center">
                       <div className="h-8 w-8 mr-4">
                         <img className="object-contain" src="/assets/designs/whatsapp-logo-light-green.png" alt="whatsapp logo" />
                       </div>
