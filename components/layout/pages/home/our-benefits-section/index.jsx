@@ -1,9 +1,10 @@
 import React from 'react';
+import moment from 'moment';
 
 const OurBenefitsSection = () => (
-  <div className="py-6 px-4">
-    <div className="text-lg font-bold">
-      Let us help you choose your next car
+  <div className="py-6">
+    <div className="text-lg font-bold mb-12">
+      Kami akan bantu Anda menentukan mobil idaman Anda dengan harga yang terbaik.
     </div>
     <div className="flex flex-col laptop:flex-row">
       <div className="my-3">
@@ -14,7 +15,7 @@ const OurBenefitsSection = () => (
           </svg>
         </div>
         <div className="font-bold mt-2">1. Pilih mobil impian Anda</div>
-        <div>Tentukan model dan spesifikasi mobil yang sesuai dengan keinginan Anda</div>
+        <div>Tentukan model dan spesifikasi mobil yang sesuai dengan keinginan Anda.</div>
       </div>
       <div className="my-3">
         <div className="w-10 h-10">
@@ -27,8 +28,14 @@ const OurBenefitsSection = () => (
             </g>
           </svg>
         </div>
-        <div className="font-bold mt-2">2. Pilih mobil impian Anda</div>
-        <div>Tentukan model dan spesifikasi mobil yang sesuai dengan keinginan Anda</div>
+        <div className="font-bold mt-2">2. Harga terbaik hanya untuk Anda</div>
+        <div>
+          Bandingkan penawaran dan
+          dapatkan harga spesial bulan
+          {' '}
+          {moment().locale('id').format('MMMM')}
+          .
+        </div>
       </div>
       <div className="my-3">
         <div className="w-10 h-10">
@@ -62,8 +69,8 @@ const OurBenefitsSection = () => (
             </g>
           </svg>
         </div>
-        <div className="font-bold mt-2">3. Pilih mobil impian Anda</div>
-        <div>Tentukan model dan spesifikasi mobil yang sesuai dengan keinginan Anda</div>
+        <div className="font-bold mt-2">3. Buy with confidence</div>
+        <div>Karena membeli mobil tidak harus rumit.</div>
       </div>
     </div>
   </div>

@@ -27,6 +27,7 @@ const ProductCard = () => (
         <div>Rp 900.000.000,-</div>
       </div>
     </div>
+    <div className="bg-primary text-center rounded-sm mt-4 text-sm py-2">Hubungi Kami</div>
   </div>
 );
 
