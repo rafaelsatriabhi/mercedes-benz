@@ -3,12 +3,28 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        'mobile-m': '375px',
+        'mobile-l': '425px',
+        tablet: '768px',
+        laptop: '1024px',
+        'laptop-m': '1280px',
+        'laptop-l': '1440px',
+      },
       colors: {
         primary: {
           DEFAULT: '#00aeef',
+          navy: '#003060',
+        },
+        success: {
+          DEFAULT: '#03A561',
         },
         warning: {
           DEFAULT: '#faa61b',
+        },
+        danger: {
+          DEFAULT: '#DC143C',
+          maroon: '#800000',
         },
         grey: {
           DEFAULT: '#505050',
@@ -18,6 +34,7 @@ module.exports = {
         '300px': '300px',
       },
       height: {
+        '520px': '520px',
         '660px': '660px',
       },
       maxWidth: {

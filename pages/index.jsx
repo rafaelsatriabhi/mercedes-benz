@@ -1,7 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Layout from '../components/layout';
-import CarouselSection from '../components/layout/pages/home/carousel-section';
+import IntroductionSection from '../components/layout/pages/home/introduction-section';
+import OurBenefitsSection from '../components/layout/pages/home/our-benefits-section';
+// import NusantaraLocation from '../components/layout/pages/home/nusantara-location-section';
+import SpecialOffersSection from '../components/layout/pages/home/special-offers-section';
+import BonusSection from '../components/layout/pages/home/bonus-section';
 
 const Home = () => (
   <>
@@ -11,8 +15,12 @@ const Home = () => (
     </Head>
     <Layout>
       <div className="w-full flex flex-col items-center overflow-hidden">
-        <div className="w-screen xl:w-full">
-          <CarouselSection />
+        <IntroductionSection />
+        <div className="w-screen px-4 laptop-m:w-full">
+          <OurBenefitsSection />
+          <SpecialOffersSection />
+          <BonusSection />
+          {/* <NusantaraLocation /> */}
         </div>
       </div>
     </Layout>
