@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import numberWithCommas from '../../helpers/number-with-commas-helper';
 
-const ProductCard = () => (
+const ProductCard = ({ car }) => (
   <div className="tablet:w-80 mb-5 tablet:mb-10 border border-gray-200 p-5 rounded-md">
     <div className="relative ">
       <div className="absolute text-sm top-1 left-1 px-2 bg-red-600 flex">
@@ -9,10 +11,10 @@ const ProductCard = () => (
         </div>
       </div>
     </div>
-    <img src="/assets/images/mercedes-benz-cars/cls-250/2022_mercedes-benz_cls_21.jpg" alt="mercedes-benz CLS 250 2022" />
+    <img alt={`${car.brand} ${car.name}`} src={car.images[0]} />
     <div className="">
-      <div className="text-gray-400">Mercedes-Benz</div>
-      <div>CLS 250 AMG Line</div>
+      <div className="text-gray-400">{car.brand}</div>
+      <div>{car.name}</div>
     </div>
     {/* START: HORIZONTAL LINE */}
     <div className="border border-top w-full my-2" />
@@ -20,15 +22,27 @@ const ProductCard = () => (
     <div className="flex flex-row text-xs justify-between">
       <div>
         <div>OTR: </div>
-        <div className="line-through">Rp 1.900.000.000,-</div>
+        <div className="line-through">{numberWithCommas(car.otr_price)}</div>
       </div>
       <div>
-        <div>Promo Anti Nyesel: </div>
-        <div>Rp 900.000.000,-</div>
+        <div>Special price: </div>
+        <div>{numberWithCommas(car.otr_price - car.discount)}</div>
       </div>
     </div>
     <div className="bg-primary text-center rounded-sm mt-4 text-sm py-2">Hubungi Kami</div>
   </div>
 );
+
+ProductCard.propTypes = {
+  car: PropTypes.shape({
+    images: PropTypes.arrayOf(
+      PropTypes.string,
+    ),
+    brand: PropTypes.string,
+    name: PropTypes.string,
+    otr_price: PropTypes.number,
+    discount: PropTypes.number,
+  }).isRequired,
+};
 
 export default ProductCard;

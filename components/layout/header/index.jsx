@@ -20,7 +20,7 @@ const Header = () => {
         <div className="w-screen laptop-m:w-full flex items-center justify-between laptop-m:justify-start h-14 laptop-m:h-16">
           <div aria-hidden onClick={() => scroll.scrollToTop()} className="flex flex-row items-center">
             <img className="w-10 h-10 mx-2" src="/assets/designs/logo.svg" alt="mercedes-benz logo" />
-            <div className="text-white text-lg font-medium w-60 mr-10">Mercedes-Benz Jakarta</div>
+            <div className="text-white text-lg font-medium mr-10">Mercedes-Benz Jakarta</div>
           </div>
           {/* START: NAVBAR MENU DESKTOP */}
           <div className="hidden w-full laptop-m:flex flex-row items-center font-medium justify-between">
@@ -34,27 +34,10 @@ const Header = () => {
           </div>
           {/* END: NAVBAR MENU DESKTOP */}
           {/* START: BURGER MENU LOGO */}
-          <div className="laptop-m:hidden w-10 h-10">
-            <div className="relative flex flex-col w-full h-full py-1.5 justify-center items-center">
-              <div className={`absolute top-3.5 border border-white bg-white w-4 h-0 transform transition ease-out duration-500 ${burgerMenu.isClicked ? 'translate-x-16' : ''}`} />
-              <div
-                aria-hidden
-                role="button"
-                onClick={() => burgerMenuHanlder()}
-                className={`absolute border border-white bg-white
-              w-4 transform transition rotate-0 duration-100
-              ${burgerMenu.isClicked ? 'origin-center rotate-45 duration-100' : ''}`}
-              />
-              <div
-                aria-hidden
-                onClick={() => burgerMenuHanlder()}
-                className={`absolute border border-white bg-white w-4 transform transition rotate-0 duration-100
-              ${burgerMenu.isClicked ? '-rotate-45 duration-100' : ''}`}
-              />
-              <div className={`absolute bottom-3.5 border border-white bg-white w-4 h-0
-              transform transition ease-out duration-300 ${burgerMenu.isClicked ? 'translate-x-16' : ''}`}
-              />
-            </div>
+          <div aria-hidden onClick={() => burgerMenuHanlder()} className="flex flex-col justify-around mr-2 px-1 py-2 laptop-m:hidden w-10 h-10">
+            <div className="border-t border-2 border-white" />
+            <div className="border-t border-2 border-white" />
+            <div className="border-t border-2 border-white" />
           </div>
           {/* END: BURGER MENU LOGO */}
         </div>

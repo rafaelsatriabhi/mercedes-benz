@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import ProductCard from '../../../../product-card';
 
-const SpecialOffersSection = () => (
+const SpecialOffersSection = ({ specialOffersData }) => (
   <div id="special-offer-section" name="special-offer-section" className="py-6">
     <div className="py-3 mb-6">
       <div className="text-3xl font-semibold mb-2">
@@ -22,14 +23,19 @@ const SpecialOffersSection = () => (
       </div>
     </div>
     <div className="flex flex-wrap justify-evenly">
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      {
+        specialOffersData.map((car) => (
+          <ProductCard car={car} />
+        ))
+      }
     </div>
   </div>
 );
+
+SpecialOffersSection.propTypes = {
+  specialOffersData: PropTypes.arrayOf(
+    PropTypes.shape({}),
+  ).isRequired,
+};
 
 export default SpecialOffersSection;
