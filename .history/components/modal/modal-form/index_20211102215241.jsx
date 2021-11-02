@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { init } from 'emailjs-com';
@@ -7,10 +7,11 @@ import EmailJsAPI from '../../../pages/api/hello';
 import numberWithCommas from '../../../helpers/number-with-commas-helper';
 
 const ModalForm = ({ setShowModal }) => {
-  init(process.env.NEXT_PUBLIC_EMAIL_JS_ID);
+  init(process.env.NEXT_EMAIL_JS_ID);
   const [isOffered, setIsOffered] = useState(false);
+  const form = useRef();
   const {
-    register, handleSubmit, formState: { errors }, setValue,
+    register, handleSubmit, watch, formState: { errors }, setValue,
   } = useForm();
 
   const checkBoxInputkHandler = () => {
@@ -19,27 +20,28 @@ const ModalForm = ({ setShowModal }) => {
       setValue('offered_price', '');
     }
   };
-  const onSubmit = async (dataForm) => {
-    const form = {
-      service_id: process.env.NEXT_PUBLIC_SERVIVE_ID,
-      template_id: process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      user_id: process.env.NEXT_PUBLIC_EMAIL_JS_ID,
+  const onSubmit = async (data) => {
+    const dataForm = {
+      service_id: 'service_ql4eo1r',
+      template_id: 'template_lvqtwj8',
+      user_id: process.env.NEXT_EMAIL_JS_ID,
       template_params: {
-        from_name: dataForm.from_name,
-        phone_number: dataForm.phone_number,
-        city: dataForm.city,
-        car_name: dataForm.car_name,
-        gotOffered: dataForm.gotOffered ? 'Ya' : 'Tidak',
-        offered_price: numberWithCommas(dataForm.offered_price),
+        from_name: data.from_name,
+        phone_number: data.phone_number,
+        city: data.city,
+        car_name: data.car_name,
+        gotOffered: data.gotOffered ? 'Ya' : 'Tidak',
+        offered_price: numberWithCommas(data.offered_price),
       },
     };
-    console.log(form);
+    console.log(dataForm);
 
     try {
       const { data } = await EmailJsAPI({
         method: 'POST',
-        data: JSON.stringify(form),
+        data: JSON.stringify(dataForm),
         headers: {
+          Authorization: 'Bearer d99253b4e13a34ed3b649b75fff8ab3d',
           'Content-Type': 'application/json',
         },
       });
@@ -58,7 +60,7 @@ const ModalForm = ({ setShowModal }) => {
             <div>-Jakarta-</div>
             <div className="text-center">Enter this form below, and get your special offers!</div>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="w-full h-full mt-16 text-black px-2">
+          <form ref={form} onSubmit={handleSubmit(onSubmit)} className="w-full h-full mt-16 text-black px-2">
             <input {...register('from_name', { required: true })} className="my-2.5 p-2 w-full" placeholder="Nama" type="text" />
             <input {...register('phone_number', { required: true, minLength: 9, maxLength: 13 })} className="my-2.5 p-2 w-full" placeholder="Nomor Telepon" type="number" />
             <input {...register('city', { required: true })} className="my-2.5 p-2 w-full" placeholder="Kota domisili" type="text" />

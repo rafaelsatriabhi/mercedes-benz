@@ -58,7 +58,7 @@ const ModalForm = ({ setShowModal }) => {
             <div>-Jakarta-</div>
             <div className="text-center">Enter this form below, and get your special offers!</div>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="w-full h-full mt-16 text-black px-2">
+          <form ref={form} onSubmit={handleSubmit(onSubmit)} className="w-full h-full mt-16 text-black px-2">
             <input {...register('from_name', { required: true })} className="my-2.5 p-2 w-full" placeholder="Nama" type="text" />
             <input {...register('phone_number', { required: true, minLength: 9, maxLength: 13 })} className="my-2.5 p-2 w-full" placeholder="Nomor Telepon" type="number" />
             <input {...register('city', { required: true })} className="my-2.5 p-2 w-full" placeholder="Kota domisili" type="text" />
