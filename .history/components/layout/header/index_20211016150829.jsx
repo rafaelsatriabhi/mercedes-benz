@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header id="navbar" className="shadow bg-black z-30 sticky top-0 w-screen flex justify-center">
+    <header id="navbar" className="shadow bg-black z-50 sticky top-0 w-screen flex justify-center">
       <div className="w-full max-w-screen-xl">
         <div className="w-screen laptop-m:w-full flex items-center justify-between laptop-m:justify-start h-14 laptop-m:h-16">
           <div aria-hidden onClick={() => scroll.scrollToTop()} className="flex flex-row items-center">

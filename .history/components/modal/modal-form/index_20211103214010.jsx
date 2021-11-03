@@ -60,8 +60,8 @@ const ModalForm = ({ setShowModal }) => {
   return (
     <div aria-hidden onClick={() => setShowModal(false)} className="fixed z-50 h-full w-full bg-black bg-opacity-50 flex justify-center">
       <div className="flex flex-col laptop:items-center justify-evenly text-black h-full w-96 laptop:w-full bg-black bg-opacity-25">
-        <div className="relative flex flex-col items-center overflow-y-auto laptop:overflow-hidden bg-white h-full w-full laptop:w-720px laptop:h-720px p-5" aria-hidden onClick={(e) => e.stopPropagation()}>
-          <svg aria-hidden role="button" onClick={() => setShowModal(false)} className="absolute right-5 top-2.5" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="relative fflex flex-col items-center overflow-y-auto laptop:overflow-hidden bg-white h-full w-full laptop:w-720px laptop:h-720px p-5" aria-hidden onClick={(e) => e.stopPropagation()}>
+          <svg className="absolute right-5 top-2.5" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#505050" />
           </svg>
           <div className="flex flex-col items-center">

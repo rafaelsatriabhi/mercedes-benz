@@ -32,14 +32,13 @@ module.exports = {
       },
       width: {
         '300px': '300px',
-        '720px': '720px',
       },
       height: {
         '520px': '520px',
         '660px': '660px',
-        '720px': '720px',
       },
       maxWidth: {
+        '1080px': '1080px',
         '1280px': '1280px',
       },
       fontSize: {

@@ -14,6 +14,16 @@ const Footer = () => (
           <div className="w-full">Email: halo@mercedes-benz.web.id</div>
         </div>
       </div>
+      <div className="flex flex-col items-center text-xxs mb-10">
+        <div className="mb-5 text-lg font-bold">Isi form dibawah ini untuk mendapatkan penawaran.</div>
+        <form className="w-full text-black">
+          <input className="my-2.5 p-2 w-full" placeholder="Nama" type="text" />
+          <input className="my-2.5 p-2 w-full" placeholder="Email (Opsional)" type="text" />
+          <input className="my-2.5 p-2 w-full" placeholder="Nomor Telepon" type="number" />
+          <textarea defaultValue="Tulis pesan Anda disini" className="my-2.5 p-2 w-full text-gray-400" rows="4" name="comment" form="usrform" />
+          <input className="w-full bg-primary text-white py-2 text-base rounded-md" type="submit" />
+        </form>
+      </div>
     </div>
   </footer>
 );
