@@ -11,13 +11,13 @@ const ProductCard = ({ car }) => (
         </div>
       </div>
     </div>
-    <img className="rounded-md" alt={`${car.brand} ${car.name}`} src={car.images[0]} />
+    <img alt={`${car.brand} ${car.name}`} src={car.images[0]} />
     <div className="">
-      <div className="text-gray-200">{car.brand}</div>
+      <div className="text-gray-400">{car.brand}</div>
       <div>{car.name}</div>
     </div>
     {/* START: HORIZONTAL LINE */}
-    <div className="border-t w-full my-2" />
+    <div className="border border-top w-full my-2" />
     {/* END: HORIZONTAL LINE */}
     <div className="flex flex-row text-xs justify-between">
       <div>
@@ -29,7 +29,7 @@ const ProductCard = ({ car }) => (
         <div>{numberWithCommas(car.otr_price - car.discount)}</div>
       </div>
     </div>
-    <div className="bg-primary text-center rounded-sm mt-4 text-sm font-medium py-2">Hubungi Kami</div>
+    <div className="bg-primary text-center rounded-sm mt-4 text-sm py-2">Hubungi Kami</div>
   </div>
 );
 

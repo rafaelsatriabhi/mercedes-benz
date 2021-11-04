@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer id="contact-us" className="bg-grey w-full laptop-m:w-screen text-white flex flex-col items-center mt-20">
+  <footer id="contact-us" className="bg-grey w-full laptop-m:w-screen text-white flex flex-col items-center mt-20 tablet:mt-24 laptop-m:mt-32">
     <div className="max-w-1280px tablet:w-full flex flex-col tablet:flex-row tablet:justify-around px-7 py-10">
       <div className="flex flex-col text-xxs mb-10 tablet:mb-0">
         <div className="mb-5 text-lg font-bold">Hubungi Kami</div>

@@ -54,7 +54,7 @@ module.exports = {
       },
       backgroundImage: {
         'black-mercedes': "url('/assets/images/black-background-mercedes-benz.jpg')",
-        'pointing-sales-man': "url('/assets/images/portrait-smiling-businessman-dressed-suit.jpg')",
+        'footer-texture': "url('/img/footer-texture.png')",
       },
     },
   },

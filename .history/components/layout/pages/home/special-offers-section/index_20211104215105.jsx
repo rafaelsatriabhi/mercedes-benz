@@ -4,7 +4,7 @@ import moment from 'moment';
 import ProductCard from '../../../../product-card';
 
 const SpecialOffersSection = ({ specialOffersData }) => (
-  <div id="special-offer-section" name="special-offer-section" className="">
+  <div id="special-offer-section" name="special-offer-section" className="py-6">
     <div className="mb-6">
       <div className="text-3xl font-semibold mb-2">
         Penawaran Spesial

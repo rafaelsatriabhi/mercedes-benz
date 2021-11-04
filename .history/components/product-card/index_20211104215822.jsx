@@ -17,7 +17,7 @@ const ProductCard = ({ car }) => (
       <div>{car.name}</div>
     </div>
     {/* START: HORIZONTAL LINE */}
-    <div className="border-t w-full my-2" />
+    <div className="border border-t w-full my-2" />
     {/* END: HORIZONTAL LINE */}
     <div className="flex flex-row text-xs justify-between">
       <div>

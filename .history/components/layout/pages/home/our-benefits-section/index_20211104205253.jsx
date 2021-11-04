@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const OurBenefitsSection = () => (
-  <div className="bg-white bg-opacity-90 rounded-md text-black p-2.5 my-10">
+  <div className="bg-white bg-opacity-75 text-black py-2.5 my-6">
     <div className="text-lg font-bold mb-12">
       Kami akan bantu Anda menentukan mobil idaman Anda dengan harga yang terbaik.
     </div>
@@ -19,7 +19,7 @@ const OurBenefitsSection = () => (
       </div>
       <div className="laptop:w-4/12 px-2.5 my-3">
         <div className="w-10 h-10">
-          <svg className="fill-current" id="Capa_1" enableBackground="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <svg className="fill-current text-white" id="Capa_1" enableBackground="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path d="m203.556 345.012 70.71-212.133c2.619-7.859-1.628-16.354-9.487-18.974-7.858-2.619-16.354 1.628-18.974 9.487l-70.71 212.133c-2.619 7.859 1.628 16.354 9.487 18.974 1.573.524 3.173.773 4.745.773 6.28.001 12.133-3.974 14.229-10.26z" />
               <path d="m309.533 279.203c24.813 0 45-20.187 45-45s-20.187-45-45-45-45 20.187-45 45 20.187 45 45 45zm0-60c8.271 0 15 6.729 15 15s-6.729 15-15 15-15-6.729-15-15 6.729-15 15-15z" />
@@ -47,7 +47,7 @@ const OurBenefitsSection = () => (
             y="0px"
             viewBox="0 0 512 512"
             xmlSpace="preserve"
-            className="fill-current"
+            className="fill-current text-white"
           >
             <g>
               <g>
