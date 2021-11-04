@@ -25,11 +25,11 @@ const IntroductionSection = ({ setShowModal }) => {
             </div>
           </div>
           <div className="w-full laptop:w-5/12 px-3.5 flex flex-col items-center justify-center bottom-0 laptop:bottom-28">
-            <div aria-hidden role="button" onClick={() => setShowModal(true)} className="bg-red-800 w-full py-4 mb-5 rounded-md text-center">Berikan Saya Penawaran Terbaik</div>
-            <div onClick={() => router.push('https://api.whatsapp.com/send/?phone=6285162815991&text&app_absent=0?lang=id')} aria-hidden role="button" className="border-4 border-green-600 hover:bg-green-200 hover:text-black flex items-center justify-center w-full py-4 rounded-md text-center">
+            <div onClick={() => router.push('https://api.whatsapp.com/send/?phone=6285162815991&text&app_absent=0?lang=id')} aria-hidden role="button" className="border-4 border-green-600 hover:bg-green-200 hover:text-black flex items-center justify-center w-full py-4 rounded-md text-center mb-5">
               <img className="w-6 mr-5" src="/assets/designs/whatsapp-logo-light-green.png" alt="whatsapp logo" />
               <div>WhatsApp</div>
             </div>
+            <div aria-hidden role="button" onClick={() => setShowModal(true)} className="bg-red-800 w-full py-4 rounded-md text-center">Berikan Saya Penawaran Terbaik</div>
           </div>
         </div>
       </section>

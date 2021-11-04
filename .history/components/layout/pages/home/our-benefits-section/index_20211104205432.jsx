@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const OurBenefitsSection = () => (
-  <div className="bg-white bg-opacity-90 rounded-md text-black p-2.5 my-10">
+  <div className="bg-white bg-opacity-90 text-black p-2.5 my-6">
     <div className="text-lg font-bold mb-12">
       Kami akan bantu Anda menentukan mobil idaman Anda dengan harga yang terbaik.
     </div>

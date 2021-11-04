@@ -53,8 +53,8 @@ module.exports = {
         xxxl: ['36px', '44px'],
       },
       backgroundImage: {
-        'black-mercedes': "url('/assets/images/black-background-mercedes-benz.jpg')",
-        'pointing-sales-man': "url('/assets/images/portrait-smiling-businessman-dressed-suit.jpg')",
+        'black-mercedes': "url('C:/Users/HP/Documents/mercedes-benz/public/assets/images/black-background-mercedes-benz.jpg')",
+        'footer-texture': "url('/img/footer-texture.png')",
       },
     },
   },
