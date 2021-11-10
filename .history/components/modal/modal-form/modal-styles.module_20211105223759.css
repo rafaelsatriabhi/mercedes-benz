@@ -1,0 +1,15 @@
+.animation {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation: fadein 1s;
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

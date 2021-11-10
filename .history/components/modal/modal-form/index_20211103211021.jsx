@@ -102,7 +102,7 @@ const ModalForm = ({ setShowModal }) => {
           </form>
           <div>Or</div>
           <div>Click the button below to contact us on WhatsApp</div>
-          <div onClick={() => router.push('https://api.whatsapp.com/send/?phone=6285162815991&text&app_absent=0?lang=id')} aria-hidden role="button" className="border-4 border-green-600 hover:bg-green-200 hover:text-black flex items-center justify-center w-full py-4 rounded-md text-center mb-5">
+          <div onClick={() => router.push('https://api.whatsapp.com/send/?phone=6281285655853&text&app_absent=0?lang=id')} aria-hidden role="button" className="border-4 border-green-600 hover:bg-green-200 hover:text-black flex items-center justify-center w-full py-4 rounded-md text-center mb-5">
             <img className="w-6 mr-5" src="/assets/designs/whatsapp-logo-light-green.png" alt="whatsapp logo" />
             <div>WhatsApp</div>
           </div>
