@@ -7,8 +7,8 @@ const Footer = () => (
         <div className="mb-5 text-lg font-bold">Hubungi Kami</div>
         <div className="text-sm">
           <p className="w-full tablet:my-2.5">
-            <a href="tel:+6285162815991">
-              Telepon: 085162815991
+            <a href="tel:+6281285655853">
+              Telepon: 081285655853
             </a>
           </p>
           <div className="w-full">Email: halo@mercedes-benz.web.id</div>
