@@ -83,11 +83,10 @@ const Home = () => {
   ]);
 
   const notificationHandler = () => {
-    setShowModal(false);
     setShowSuccessNotification(true);
     setTimeout(() => {
       setShowSuccessNotification(false);
-    }, [3000]);
+    }, [1500]);
   };
   return (
     <>
@@ -104,10 +103,7 @@ const Home = () => {
       {
       showModal
       && (
-      <ModalForm
-        setShowModal={setShowModal}
-        notificationHandler={notificationHandler}
-      />
+      <ModalForm setShowModal={setShowModal} />
       )
       }
       <ModalFloatingButtons />

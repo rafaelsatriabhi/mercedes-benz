@@ -12,7 +12,6 @@ import ModalFloatingNotification from '../components/modal/modal-floating-notifi
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
-  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
   const [specialOffersData] = useState([
     {
       body_type: 'hatchback',
@@ -81,14 +80,6 @@ const Home = () => {
       discount: 0,
     },
   ]);
-
-  const notificationHandler = () => {
-    setShowModal(false);
-    setShowSuccessNotification(true);
-    setTimeout(() => {
-      setShowSuccessNotification(false);
-    }, [3000]);
-  };
   return (
     <>
       <Head>
@@ -96,7 +87,7 @@ const Home = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {
-        showSuccessNotification
+        false
         && (
           <ModalFloatingNotification />
         )
@@ -104,10 +95,7 @@ const Home = () => {
       {
       showModal
       && (
-      <ModalForm
-        setShowModal={setShowModal}
-        notificationHandler={notificationHandler}
-      />
+      <ModalForm setShowModal={setShowModal} />
       )
       }
       <ModalFloatingButtons />

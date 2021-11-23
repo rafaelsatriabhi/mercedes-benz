@@ -29,28 +29,33 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
         offered_price: dataForm.gotOffered ? numberWithCommas(dataForm.offered_price) : '',
       },
     };
-
+    // G.A. SUBMITTED FORM
     try {
-      await EmailJsAPI({
-        method: 'POST',
-        data: JSON.stringify(form),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      notificationHandler();
-      // G.A. SUBMITTED FORM
-      await ga.event({
+      const data = await ga.event({
         action: 'generate_lead',
         params: {
           search_term: form,
         },
       });
+      console.log(data);
     } catch (err) {
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 1000);
+      console.log('error!');
+      console.log(err.response);
     }
+    // try {
+    //   await EmailJsAPI({
+    //     method: 'POST',
+    //     data: JSON.stringify(form),
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //   });
+    //   notificationHandler();
+    // } catch (err) {
+    //   setTimeout(() => {
+    //     setIsSubmitted(false);
+    //   }, 1000);
+    // }
   };
 
   return (

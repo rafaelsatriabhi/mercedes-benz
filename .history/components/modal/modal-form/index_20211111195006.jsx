@@ -1,19 +1,28 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { init } from 'emailjs-com';
 import modalStyles from './modal-styles.module.css';
 import EmailJsAPI from '../../../pages/api/hello';
 import numberWithCommas from '../../../helpers/number-with-commas-helper';
-import * as ga from '../../../lib/ga';
 
 const ModalForm = ({ setShowModal, notificationHandler }) => {
   init(process.env.NEXT_PUBLIC_EMAIL_JS_ID);
+  const router = useRouter();
+  const [isOffered, setIsOffered] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const {
-    register, handleSubmit, watch,
+    register, handleSubmit, setValue, watch,
   } = useForm();
+
+  // const checkBoxInputHandler = () => {
+  //   setIsOffered(!isOffered);
+  //   if (isOffered) {
+  //     setValue('offered_price', '');
+  //   }
+  // };
   const onSubmit = async (dataForm) => {
     setIsSubmitted(true);
     const form = {
@@ -39,17 +48,11 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
         },
       });
       notificationHandler();
-      // G.A. SUBMITTED FORM
-      await ga.event({
-        action: 'generate_lead',
-        params: {
-          search_term: form,
-        },
-      });
     } catch (err) {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 1000);
+      console.log(err.response);
     }
   };
 
@@ -120,7 +123,6 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
 
 ModalForm.propTypes = {
   setShowModal: PropTypes.func.isRequired,
-  notificationHandler: PropTypes.func.isRequired,
 };
 
 export default ModalForm;

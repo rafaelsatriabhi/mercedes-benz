@@ -8,11 +8,9 @@ import SpecialOffersSection from '../components/layout/pages/home/special-offers
 import BonusSection from '../components/layout/pages/home/bonus-section';
 import ModalForm from '../components/modal/modal-form';
 import ModalFloatingButtons from '../components/modal/modal-floating-buttons';
-import ModalFloatingNotification from '../components/modal/modal-floating-notification';
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
-  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
   const [specialOffersData] = useState([
     {
       body_type: 'hatchback',
@@ -81,14 +79,6 @@ const Home = () => {
       discount: 0,
     },
   ]);
-
-  const notificationHandler = () => {
-    setShowModal(false);
-    setShowSuccessNotification(true);
-    setTimeout(() => {
-      setShowSuccessNotification(false);
-    }, [3000]);
-  };
   return (
     <>
       <Head>
@@ -96,18 +86,15 @@ const Home = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {
-        showSuccessNotification
+        true
         && (
-          <ModalFloatingNotification />
+          <ModalFloatingButtons />
         )
       }
       {
       showModal
       && (
-      <ModalForm
-        setShowModal={setShowModal}
-        notificationHandler={notificationHandler}
-      />
+      <ModalForm setShowModal={setShowModal} />
       )
       }
       <ModalFloatingButtons />

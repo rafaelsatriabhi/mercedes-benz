@@ -1,25 +1,34 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { init } from 'emailjs-com';
 import modalStyles from './modal-styles.module.css';
 import EmailJsAPI from '../../../pages/api/hello';
 import numberWithCommas from '../../../helpers/number-with-commas-helper';
-import * as ga from '../../../lib/ga';
 
-const ModalForm = ({ setShowModal, notificationHandler }) => {
+const ModalForm = ({ setShowModal }) => {
   init(process.env.NEXT_PUBLIC_EMAIL_JS_ID);
+  const router = useRouter();
+  const [isOffered, setIsOffered] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const {
-    register, handleSubmit, watch,
+    register, handleSubmit, setValue, watch,
   } = useForm();
+
+  // const checkBoxInputHandler = () => {
+  //   setIsOffered(!isOffered);
+  //   if (isOffered) {
+  //     setValue('offered_price', '');
+  //   }
+  // };
   const onSubmit = async (dataForm) => {
     setIsSubmitted(true);
     const form = {
       service_id: process.env.NEXT_PUBLIC_SERVICE_ID,
       template_id: process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      user_id: process.env.NEXT_PUBLIC_EMAIL_JS_USER_ID,
+      user_id: process.env.NEXT_PUBLIC_EMAIL_JS_ID,
       template_params: {
         from_name: dataForm.from_name,
         phone_number: dataForm.phone_number,
@@ -31,25 +40,20 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
     };
 
     try {
-      await EmailJsAPI({
+      const { data } = await EmailJsAPI({
         method: 'POST',
         data: JSON.stringify(form),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      notificationHandler();
-      // G.A. SUBMITTED FORM
-      await ga.event({
-        action: 'generate_lead',
-        params: {
-          search_term: form,
-        },
-      });
+      setIsSubmitted(false);
+      console.log(data);
     } catch (err) {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 1000);
+      console.log(err.response);
     }
   };
 
@@ -120,7 +124,6 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
 
 ModalForm.propTypes = {
   setShowModal: PropTypes.func.isRequired,
-  notificationHandler: PropTypes.func.isRequired,
 };
 
 export default ModalForm;

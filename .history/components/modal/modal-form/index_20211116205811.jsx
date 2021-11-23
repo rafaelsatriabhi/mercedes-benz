@@ -40,7 +40,7 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
       });
       notificationHandler();
       // G.A. SUBMITTED FORM
-      await ga.event({
+      ga.event({
         action: 'generate_lead',
         params: {
           search_term: form,

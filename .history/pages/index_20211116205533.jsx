@@ -9,6 +9,7 @@ import BonusSection from '../components/layout/pages/home/bonus-section';
 import ModalForm from '../components/modal/modal-form';
 import ModalFloatingButtons from '../components/modal/modal-floating-buttons';
 import ModalFloatingNotification from '../components/modal/modal-floating-notification';
+import * as ga from '../lib/ga';
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);

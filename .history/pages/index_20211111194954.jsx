@@ -87,7 +87,7 @@ const Home = () => {
     setShowSuccessNotification(true);
     setTimeout(() => {
       setShowSuccessNotification(false);
-    }, [3000]);
+    }, [1500]);
   };
   return (
     <>
@@ -104,13 +104,12 @@ const Home = () => {
       {
       showModal
       && (
-      <ModalForm
-        setShowModal={setShowModal}
-        notificationHandler={notificationHandler}
-      />
+      <ModalForm setShowModal={setShowModal} />
       )
       }
-      <ModalFloatingButtons />
+      <ModalFloatingButtons
+        notificationHandler={notificationHandler}
+      />
       <Layout>
         <div className="w-full flex flex-col items-center overflow-hidden">
           <IntroductionSection setShowModal={setShowModal} />

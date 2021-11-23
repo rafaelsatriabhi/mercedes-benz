@@ -1,10 +1,8 @@
 import '../styles/globals.css';
 import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import * as ga from '../lib/ga';
 // eslint-disable-next-line react/prop-types
 const MyApp = ({ Component, pageProps }) => {
-  const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
       ga.pageview(url);

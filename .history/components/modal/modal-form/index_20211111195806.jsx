@@ -6,7 +6,6 @@ import { init } from 'emailjs-com';
 import modalStyles from './modal-styles.module.css';
 import EmailJsAPI from '../../../pages/api/hello';
 import numberWithCommas from '../../../helpers/number-with-commas-helper';
-import * as ga from '../../../lib/ga';
 
 const ModalForm = ({ setShowModal, notificationHandler }) => {
   init(process.env.NEXT_PUBLIC_EMAIL_JS_ID);
@@ -39,13 +38,6 @@ const ModalForm = ({ setShowModal, notificationHandler }) => {
         },
       });
       notificationHandler();
-      // G.A. SUBMITTED FORM
-      await ga.event({
-        action: 'generate_lead',
-        params: {
-          search_term: form,
-        },
-      });
     } catch (err) {
       setTimeout(() => {
         setIsSubmitted(false);

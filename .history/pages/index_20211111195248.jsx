@@ -87,7 +87,7 @@ const Home = () => {
     setShowSuccessNotification(true);
     setTimeout(() => {
       setShowSuccessNotification(false);
-    }, [3000]);
+    }, [1500]);
   };
   return (
     <>
